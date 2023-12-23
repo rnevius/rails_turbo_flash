@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 module RailsTurboFlash
   module Options
     module ClassMethods
       def option(name, default: nil)
         attr_accessor(name)
+
         schema[name] = default
       end
 
@@ -48,5 +51,4 @@ module RailsTurboFlash
       @config = Configuration.new
     end
   end
-
 end
