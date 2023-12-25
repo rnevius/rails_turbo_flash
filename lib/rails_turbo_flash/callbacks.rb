@@ -13,11 +13,10 @@ module RailsTurboFlash
     def append_flash_to_turbo_stream_response
       return unless request.format.turbo_stream? && flash.any?
 
-      flash_partial = 'components/flash_message'
       response.write turbo_stream.public_send(
         RailsTurboFlash.config.action,
         RailsTurboFlash.config.target,
-        partial: flash_partial,
+        partial: 'turbo_flash/flash_message',
         locals: { flash: }
       )
     end
