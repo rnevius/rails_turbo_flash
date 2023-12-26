@@ -10,6 +10,8 @@ Add `rails_turbo_flash` to your Gemfile, or:
 $ bundle add rails_turbo_flash
 ```
 
+## Getting Started
+
 Use the view helper to render a turbo stream target into your top-level layouts. For example, in `app/views/layouts/application.html.erb`:
 
 ```erb
@@ -21,6 +23,8 @@ Or with some additional attributes:
 ```erb
 <%= turbo_flash_tag class: 'fixed flex gap-8 justify-center top-0 right-0 z-50' %>
 ```
+
+And then add flash messages in your controller actions with [`flash.now`](https://api.rubyonrails.org/classes/ActionDispatch/Flash/FlashHash.html#method-i-now).
 
 ## Customizing
 
