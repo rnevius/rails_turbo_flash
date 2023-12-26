@@ -12,6 +12,14 @@ $ bundle add rails_turbo_flash
 
 ## Getting Started
 
+1. Include the controller helper:
+
+    ```ruby
+    class ApplicationController < ActionController::Base
+      include RailsTurboFlash::Callbacks
+    end
+    ```
+
 1. Use the view helper to render a turbo stream target into your top-level layouts. For example, in `app/views/layouts/application.html.erb`:
 
     ```erb
@@ -20,14 +28,6 @@ $ bundle add rails_turbo_flash
     <%# Or with some additional attributes: %>
 
     <%= turbo_flash_tag class: 'fixed flex gap-8 justify-center top-0 right-0 z-50' %>
-    ```
-
-1. Include the controller helper:
-
-    ```ruby
-    class ApplicationController < ActionController::Base
-      include RailsTurboFlash::Callbacks
-    end
     ```
 
 1. Add flash messages in your controller actions with [`flash.now`](https://api.rubyonrails.org/classes/ActionDispatch/Flash/FlashHash.html#method-i-now).
