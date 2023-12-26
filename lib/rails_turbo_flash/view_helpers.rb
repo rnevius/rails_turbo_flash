@@ -10,7 +10,7 @@ module RailsTurboFlash
     # @return [String] The HTML tag for displaying flash messages.
     def turbo_flash_tag(options = nil)
       options ||= {}
-      options[:id] = 'turbo-flash'
+      options[:id] = RailsTurboFlash.config.target
 
       tag.div nil, **options
     end
