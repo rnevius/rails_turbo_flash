@@ -10,6 +10,18 @@ Add `rails_turbo_flash` to your Gemfile, or:
 $ bundle add rails_turbo_flash
 ```
 
+Use the view helper to render a turbo stream target into your top-level layouts. For example, in `app/views/layouts/application.html.erb`:
+
+```erb
+<%= turbo_flash_tag %>
+```
+
+Or with some additional attributes:
+
+```erb
+<%= turbo_flash_tag class: 'fixed flex gap-8 justify-center top-0 right-0 z-50' %>
+```
+
 ## Why and How
 
 Unable to find an authoritative solution from the Turbo Rails team or Rails community for adding flash messages to turbo stream responses, I hacked this gem together. It aims to be [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself), simple, and unobtrusive. This solution was tailored specifically to my needs and _works for me_; I make no guarantees it's good for everyone.
@@ -17,6 +29,16 @@ Unable to find an authoritative solution from the Turbo Rails team or Rails comm
 [Basically](https://github.com/rnevius/rails_turbo_flash/blob/main/lib/rails_turbo_flash/callbacks.rb), it checks for a `turbo_stream` request format and appends a turbo stream to the response body via an `after_action` callback. The entire implementation is only a few lines of code.
 
 ## Customizing
+
+To customize Rails Turbo Flash, create a file `config/initializers/rails_turbo_flash.rb`.
+
+The default values are shown below:
+
+```ruby
+RailsTurboFlash.configure do |config|
+  config.action = :prepend # The turbo stream action
+end
+```
 
 To make Rails Turbo Flash look like your app, override the bundled views by adding them to your app. You can manually copy the specific views that you need to `app/views/turbo_flash`, or copy them to your application with the included generator:
 
