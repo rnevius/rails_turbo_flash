@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
-  spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
+  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
@@ -22,8 +22,8 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 3.1.0'
 
-  spec.add_dependency 'rails', '>= 6.1.5'
-  spec.add_dependency 'turbo-rails', '>= 1.5.0'
+  spec.add_dependency 'rails', '~> 6.1'
+  spec.add_dependency 'turbo-rails', '~> 1.5'
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir['{app,config,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
