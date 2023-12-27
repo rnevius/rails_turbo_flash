@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/rnevius/rails_turbo_flash'
   spec.license       = 'MIT'
   spec.summary       = 'Turbo Stream flash messages for Rails'
-  spec.description   = 'Flash message injection for Ruby on Rails TurboStream responses'
+  spec.description   = 'Flash message injection for Ruby on Rails Turbo Stream responses'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
   # to allow pushing to a single host or delete this section to allow pushing to any host.
