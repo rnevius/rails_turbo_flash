@@ -1,13 +1,8 @@
 <% flash.each do |key, message| %>
-  <div class="bg-white border border-gray-200 rounded-md my-4 px-5 py-3 shadow-md flex items-start justify-between text-sm transition-all duration-300" data-controller="flash" role="dialog" aria-labelledby="<%= "flash-title-#{key}" %>" aria-describedby="<%= "flash-body-#{key}" %>">
-    <div class="flex flex-col gap-1">
-      <div id="<%= "flash-title-#{key}" %>"><%= message['title'] || message %></div>
-      <% if message['body'] %>
-        <div id="<%= "flash-body-#{key}" %>" class="font-light text-gray-500"><%= message['body'] %></div>
-      <% end %>
-    </div>
-    <button class="block text-gray-400 pl-6 text-lg leading-none" aria-label="Close" data-action="turbo_flash#dismiss" type="button">
-      <span aria-hidden="true">&times;</span>
-    </button>
+  <div role="dialog" aria-labelledby="<%= "turbo-flash-title-#{key}" %>" aria-describedby="<%= "turbo-flash-body-#{key}" %>">
+    <div id="<%= "turbo-flash-title-#{key}" %>"><%= message['title'] || message %></div>
+    <% if message['body'] %>
+      <div id="<%= "turbo-flash-body-#{key}" %>"><%= message['body'] %></div>
+    <% end %>
   </div>
 <% end %>

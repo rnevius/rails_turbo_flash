@@ -1,8 +1,5 @@
 - flash.each do |key, message|
-  .bg-white.border.border-gray-200.rounded-md.my-4.px-5.py-3.shadow-md.flex.items-start.justify-between.text-sm.transition-all.duration-300{ 'data-controller' => 'flash', 'role' => 'dialog', 'aria-labelledby' => "flash-title-#{key}", 'aria-describedby' => "flash-body-#{key}" }
-    .flex.flex-col.gap-1
-      #{"flash-title-#{key}"}= message['title'] || message
-      - if message['body']
-        #{"flash-body-#{key}"}.font-light.text-gray-500= message['body']
-    %button.block.text-gray-400.pl-6.text-lg.leading-none{'aria-label' => 'Close', 'data-action' => 'flash#dismiss', 'type' => 'button'}
-      %span{'aria-hidden' => 'true'}&times;
+  %div{"aria-describedby" => "turbo-flash-body-#{key}", "aria-labelledby" => "turbo-flash-title-#{key}", :role => "dialog"}
+    %div{:id => "turbo-flash-title-#{key}"}= message['title'] || message
+    - if message['body']
+      %div{:id => "turbo-flash-body-#{key}"}= message['body']
