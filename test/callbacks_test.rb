@@ -16,12 +16,12 @@ class CallbacksTest < ActionDispatch::IntegrationTest
   def test_no_tag_added_if_format_not_turbo_stream
     get callbacks_url, params: { flash: true }
 
-    refute_includes response.body, 'turbo-stream'
+    assert_not_includes response.body, 'turbo-stream'
   end
 
   def test_no_tag_added_if_no_flash_messages
     get callbacks_url(format: :turbo_stream)
 
-    refute_includes response.body, 'turbo-stream'
+    assert_not_includes response.body, 'turbo-stream'
   end
 end
