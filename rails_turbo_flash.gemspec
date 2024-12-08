@@ -5,8 +5,8 @@ require_relative 'lib/rails_turbo_flash/version'
 Gem::Specification.new do |spec|
   spec.name        = 'rails_turbo_flash'
   spec.version     = RailsTurboFlash::VERSION
-  spec.authors     = ['Ryan Nevius']
-  spec.email       = ['ryan@syntarsus.io']
+  spec.authors     = [ 'Ryan Nevius' ]
+  spec.email       = [ 'ryan@syntarsus.io' ]
   spec.homepage      = 'https://github.com/rnevius/rails_turbo_flash'
   spec.license       = 'MIT'
   spec.summary       = 'Turbo Stream flash messages for Rails'
